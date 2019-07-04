@@ -12,10 +12,6 @@ app.get('/ping', (req, res) => {
     res.send(JSON.stringify({ data: "ping" }));
 });
 
-app.get('/ping2', (req, res) => {
-    res.send(JSON.stringify({ data: "ping" }));
-});
-
 app.put('/broadcast', (req, res) => {
     res.send(JSON.stringify({ data: "broadcast" }));
 });
