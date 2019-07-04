@@ -8,11 +8,11 @@ app.use(function(req, res, next) {
 });
 
 // routes
-app.get('/', function(req, res) {
+app.get('/ping', function(req, res) {
     res.send(JSON.stringify({ data: "ping" }));
 });
 
-app.get('/broadcast', function(req, res) {
+app.put('/broadcast', function(req, res) {
     res.send(JSON.stringify({ data: "broadcast" }));
 });
 
