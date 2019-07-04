@@ -9,4 +9,4 @@ router.put('/', (req, res) => {
     res.send(JSON.stringify({ data: "broadcast" }));
 });
 
-module.exports = router
+module.exports = router;
