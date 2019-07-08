@@ -25,6 +25,7 @@ function sendToUrl(url) {
 
     return requestPromise(requestPromiseOptions)
         .then((response) => {
+        	console.log(response.body);
             return url + ' ' + response.statusCode;
         })
         .catch((err) => {
