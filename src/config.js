@@ -2,6 +2,7 @@ const dotenv = require('dotenv').config();
 
 module.exports.port = process.env.PORT;
 module.exports.httpClientTimeoutMs = process.env.HTTP_CLIENT_TIMEOUT_MS;
+module.exports.eventPayload = process.env.EVENT_PAYLOAD;
 
 // parse broadcast urls
 var broadcastUrls = [];
@@ -14,4 +15,19 @@ if (process.env.BROADCAST_URLS) {
     console.warn('process.env.BROADCAST_URLS is not set');
 }
 
+// parse event urls
+var eventUrls = [];
+console.log('parsing EVENT_URLS env property');
+
+if (process.env.EVENT_URLS) {
+    console.log('parsing EVENT_URLS', process.env.EVENT_URLS);
+    eventUrls = process.env.EVENT_URLS.split(' ');
+    console.log('eventUrls', eventUrls);
+} else {
+    console.warn('process.env.EVENT_URLS is not set');
+}
+
+console.log('the event payload is ', process.env.EVENT_PAYLOAD);
+
 module.exports.broadcastUrls = broadcastUrls;
+module.exports.eventUrls = eventUrls;
