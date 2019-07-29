@@ -5,7 +5,7 @@ const fs = require('fs');
 describe('BSS Inventory Broadcast Tests', function() {
 
     beforeEach(function() {
-        let bssExampleInventoryBroadcastRaw = fs.readFileSync('src/data/bss/bss-inventory-broadcast-sample.json');
+        let bssExampleInventoryBroadcastRaw = fs.readFileSync('src/integration/bss/bss-inventory-broadcast-sample.json');
         let bssExampleInventoryBroadcast = JSON.parse(bssExampleInventoryBroadcastRaw);
 
         this.enrichedOrderItems = bssInventoryBroadcast.parseAndEnrichBSSInventoryBroadcast(bssExampleInventoryBroadcast);
@@ -22,7 +22,7 @@ describe('BSS Inventory Broadcast Tests', function() {
 
     it('should process an enriched order items', function() {
 
-        // let bssExampleInventoryBroadcastRaw = fs.readFileSync('src/data/bss/bss-inventory-broadcast-sample.json');
+        // let bssExampleInventoryBroadcastRaw = fs.readFileSync('src/integration/bss/bss-inventory-broadcast-sample.json');
         // let bssExampleInventoryBroadcast = JSON.parse(bssExampleInventoryBroadcastRaw);
 
         // let processedOrderItems = bssInventoryBroadcast.getAssetProcessItems(bssExampleInventoryBroadcast);

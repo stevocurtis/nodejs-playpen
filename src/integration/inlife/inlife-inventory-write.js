@@ -2,7 +2,7 @@ module.exports = {
     //
     // This function writes multiple inventory into inlfe system
     //
-    writeInlifeAssets: function(enhancedBssItem[]) {},
+    writeInlifeAssets: function(enhancedBssItems) {},
 
     //
     // This function writes single inventory into inlfe system
