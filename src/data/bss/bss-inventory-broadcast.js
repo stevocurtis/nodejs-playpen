@@ -1,26 +1,35 @@
-module.exports = {
-    getAssetProcessItems: function(payload) {
-        let processedOrderItems = [];
-        // console.log('getAsseprocessItems received raw', payload);
-        // console.log('getAsseprocessItems received stringified', JSON.stringify(payload));
+var inlifeInventoryWrite = require('../inlife/inlife-inventory-write');
 
-        // console.log(payload.Order);
+module.exports = {
+    //
+    // This function parses the payload and stores useful data
+    //
+    parseAndEnrichBSSInventoryBroadcast: function(payload) {
+        let enrichedOrderItems = [];
+
         if (payload && payload.Order && payload.Order.orderItem) {
             payload.Order.orderItem.forEach(orderItem => {
                 // console.log('found an order item', orderItem);
-                console.log('~~~~~~~~~~~~~~~~~~~~~~~~~');
-                processedOrderItems.push({
+                enrichedOrderItems.push({
                     'orderItem': orderItem,
                     'id': getAncestordIdFromOrderItem(orderItem, 0),
                     'parentId': getAncestordIdFromOrderItem(orderItem, 1),
                     'type': getAssedTypeFromOrderItem(orderItem)
+                        // TODO - if need sibling relationships then will need to record hierarchy depth as well
                 })
             });
         } else {
-            console.error('bss inventory does not contain and items');
+            console.error('bss inventory does not contain any items');
         }
-        console.log('processedOrderItems', processedOrderItems);
-        return processedOrderItems;
+        console.log('enrichedOrderItems', enrichedOrderItems);
+        return enrichedOrderItems;
+    },
+
+    //
+    // This function simulates the work to update inlife inventory
+    //
+    writeInlifeInventory: function(enrichedBssItems) {
+        inlifeInventoryWrite.createInlifeAsset(enrichedBssItems)
     }
 }
 
