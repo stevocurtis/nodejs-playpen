@@ -1,0 +1,842 @@
+{
+    "Order": {
+        "clientId": "GENERIC_SOI",
+        "orderKey": {
+            "type": "SOI_ORDER",
+            "primaryKey": {
+                "value": -1
+            },
+            "externalKey": 1010
+        },
+        "orderSpecKey": {
+            "type": "SOI_ORDER_SPEC",
+            "primaryKey": {
+                "value": -1
+            },
+            "externalKey": -1
+        },
+        "status": "New",
+        "orderItem": [{
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11517
+                },
+                "orderItemSpecKey": {
+                    "type": "CFS",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "Primary Managed CPE CFS",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "ID_b4kkfbwa3o"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/93c3593a-51a0-4792-b7ba-65c8a8b2df59\/de39707b-d775-46a5-b61a-e501fac0e6f9\/5a625fe3-9db4-40cd-82c0-169c45d68569"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/93c3593a-51a0-4792-b7ba-65c8a8b2df59\/de39707b-d775-46a5-b61a-e501fac0e6f9\/5a625fe3-9db4-40cd-82c0-169c45d68569"
+                    },
+                    "characteristics": {
+                        "item": [{
+                                "characteristic": "Manufacturer",
+                                "value": {
+                                    "valueDetail": "LG"
+                                }
+                            },
+                            {
+                                "characteristic": "CPU",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            },
+                            {
+                                "characteristic": "model",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            },
+                            {
+                                "characteristic": "state",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            },
+                            {
+                                "characteristic": "storage",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            },
+                            {
+                                "characteristic": "type",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            },
+                            {
+                                "characteristic": "supportedBandwidth",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            },
+                            {
+                                "characteristic": "RAM",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            },
+                            {
+                                "characteristic": "manufacturer",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            }
+                        ]
+                    },
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11529
+                },
+                "orderItemSpecKey": {
+                    "type": "Package",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "SDWAN Site Offer",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "Package",
+                        "primaryKey": {
+                            "value": "ID_330fy3tma8"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "Package",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed"
+                    },
+                    "characteristics": {},
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11528
+                },
+                "orderItemSpecKey": {
+                    "type": "Product",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "SDWAN PS",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "Product",
+                        "primaryKey": {
+                            "value": "ID_q3ovn45cqw"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "Product",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/af982bf2-45af-4ee8-a8ae-e1da2114bfe7\/23459c23-dff5-4b58-b0f1-206b0b2c4fc7"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/af982bf2-45af-4ee8-a8ae-e1da2114bfe7\/23459c23-dff5-4b58-b0f1-206b0b2c4fc7"
+                    },
+                    "characteristics": {},
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11525
+                },
+                "orderItemSpecKey": {
+                    "type": "CFS",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "Engineer Install CFS",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "ID_k8o4n28sne"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/93c3593a-51a0-4792-b7ba-65c8a8b2df59\/de39707b-d775-46a5-b61a-e501fac0e6f9\/5a625fe3-9db4-40cd-82c0-169c45d68569\/047048e7-e0ff-420d-b210-fed6313d26c3"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/93c3593a-51a0-4792-b7ba-65c8a8b2df59\/de39707b-d775-46a5-b61a-e501fac0e6f9\/5a625fe3-9db4-40cd-82c0-169c45d68569\/047048e7-e0ff-420d-b210-fed6313d26c3"
+                    },
+                    "characteristics": {
+                        "item": [{
+                                "characteristic": "itemType",
+                                "value": {
+                                    "valueDetail": "CustomerFacingServiceSpec"
+                                }
+                            },
+                            {
+                                "characteristic": "installer",
+                                "value": {
+                                    "valueDetail": "BTFF"
+                                }
+                            },
+                            {
+                                "characteristic": "installationType",
+                                "value": {
+                                    "valueDetail": "BT"
+                                }
+                            },
+                            {
+                                "characteristic": "itemCode",
+                                "value": {
+                                    "valueDetail": "CFS_BTInstall"
+                                }
+                            },
+                            {
+                                "characteristic": "baseItemCode",
+                                "value": {
+                                    "valueDetail": "base_CustomerFacingServiceSpec"
+                                }
+                            },
+                            {
+                                "characteristic": "appointment",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            },
+                            {
+                                "characteristic": "state",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            }
+                        ]
+                    },
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11522
+                },
+                "orderItemSpecKey": {
+                    "type": "Package",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "Edge Site",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "Package",
+                        "primaryKey": {
+                            "value": "ID_4yj7ugft9f"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "Package",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/93c3593a-51a0-4792-b7ba-65c8a8b2df59"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/93c3593a-51a0-4792-b7ba-65c8a8b2df59"
+                    },
+                    "characteristics": {},
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11519
+                },
+                "orderItemSpecKey": {
+                    "type": "Product",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "SDWAN Site Spec",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "Product",
+                        "primaryKey": {
+                            "value": "ID_f58pq08zu8"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "Product",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed\/1f3c2f3e-8c82-4fb2-b75a-b8699696824c"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed\/1f3c2f3e-8c82-4fb2-b75a-b8699696824c"
+                    },
+                    "characteristics": {
+                        "item": [{
+                                "characteristic": "Bandwidth (BT)",
+                                "value": {
+                                    "valueDetail": "Medium"
+                                }
+                            },
+                            {
+                                "characteristic": "Resilience (BT)",
+                                "value": {
+                                    "valueDetail": "Load Balanced"
+                                }
+                            },
+                            {
+                                "characteristic": "Topology (BT)",
+                                "value": {
+                                    "valueDetail": "Secure+"
+                                }
+                            }
+                        ]
+                    },
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11521
+                },
+                "orderItemSpecKey": {
+                    "type": "Bundle",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "BT GLOBAL SDWAN",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "Bundle",
+                        "primaryKey": {
+                            "value": "ID_e8wcl43ckb"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "Bundle",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032"
+                    },
+                    "characteristics": {},
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11524
+                },
+                "orderItemSpecKey": {
+                    "type": "Package",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "SDWAN Offer",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "Package",
+                        "primaryKey": {
+                            "value": "ID_il5w3u9gdt"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "Package",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/af982bf2-45af-4ee8-a8ae-e1da2114bfe7"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/af982bf2-45af-4ee8-a8ae-e1da2114bfe7"
+                    },
+                    "characteristics": {},
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11526
+                },
+                "orderItemSpecKey": {
+                    "type": "CFS",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "Management Connection CFS",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "ID_8099d60fdi"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed\/1f3c2f3e-8c82-4fb2-b75a-b8699696824c\/14a65915-f176-4870-9d22-ab95942dd8c5\/c8126f5a-221d-4e63-87ad-b7d6706da9b4"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed\/1f3c2f3e-8c82-4fb2-b75a-b8699696824c\/14a65915-f176-4870-9d22-ab95942dd8c5\/c8126f5a-221d-4e63-87ad-b7d6706da9b4"
+                    },
+                    "characteristics": {
+                        "item": [{
+                                "characteristic": "itemType",
+                                "value": {
+                                    "valueDetail": "CustomerFacingServiceSpec"
+                                }
+                            },
+                            {
+                                "characteristic": "itemCode",
+                                "value": {
+                                    "valueDetail": "CFS_ConnectivityManagement"
+                                }
+                            },
+                            {
+                                "characteristic": "baseItemCode",
+                                "value": {
+                                    "valueDetail": "base_CustomerFacingServiceSpec"
+                                }
+                            },
+                            {
+                                "characteristic": "VPNId",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            }
+                        ]
+                    },
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11516
+                },
+                "orderItemSpecKey": {
+                    "type": "CFS",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "Engineer Install CFS",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "ID_4lwho3caxs"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed\/1f3c2f3e-8c82-4fb2-b75a-b8699696824c\/14a65915-f176-4870-9d22-ab95942dd8c5\/047048e7-e0ff-420d-b210-fed6313d26c3"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed\/1f3c2f3e-8c82-4fb2-b75a-b8699696824c\/14a65915-f176-4870-9d22-ab95942dd8c5\/047048e7-e0ff-420d-b210-fed6313d26c3"
+                    },
+                    "characteristics": {
+                        "item": [{
+                                "characteristic": "itemType",
+                                "value": {
+                                    "valueDetail": "CustomerFacingServiceSpec"
+                                }
+                            },
+                            {
+                                "characteristic": "installer",
+                                "value": {
+                                    "valueDetail": "Unisys"
+                                }
+                            },
+                            {
+                                "characteristic": "installationType",
+                                "value": {
+                                    "valueDetail": "BT"
+                                }
+                            },
+                            {
+                                "characteristic": "itemCode",
+                                "value": {
+                                    "valueDetail": "CFS_BTInstall"
+                                }
+                            },
+                            {
+                                "characteristic": "baseItemCode",
+                                "value": {
+                                    "valueDetail": "base_CustomerFacingServiceSpec"
+                                }
+                            },
+                            {
+                                "characteristic": "appointment",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            },
+                            {
+                                "characteristic": "state",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            }
+                        ]
+                    },
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11520
+                },
+                "orderItemSpecKey": {
+                    "type": "CFS",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "Underlay WAN CFS",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "ID_e3qi8hxux2"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed\/1f3c2f3e-8c82-4fb2-b75a-b8699696824c\/67f5675f-4d1d-459a-84d0-33b9751b5d13"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed\/1f3c2f3e-8c82-4fb2-b75a-b8699696824c\/67f5675f-4d1d-459a-84d0-33b9751b5d13"
+                    },
+                    "characteristics": {},
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11523
+                },
+                "orderItemSpecKey": {
+                    "type": "CFS",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "NFV CFS",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "ID_u3xd3rlyn1"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed\/1f3c2f3e-8c82-4fb2-b75a-b8699696824c\/14a65915-f176-4870-9d22-ab95942dd8c5"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/8e3978df-1e65-477d-a7d8-cf0ca67e15ed\/1f3c2f3e-8c82-4fb2-b75a-b8699696824c\/14a65915-f176-4870-9d22-ab95942dd8c5"
+                    },
+                    "characteristics": {},
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11527
+                },
+                "orderItemSpecKey": {
+                    "type": "CFS",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "Management Connection CFS",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "ID_a6vibep9e4"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/93c3593a-51a0-4792-b7ba-65c8a8b2df59\/de39707b-d775-46a5-b61a-e501fac0e6f9\/5a625fe3-9db4-40cd-82c0-169c45d68569\/c8126f5a-221d-4e63-87ad-b7d6706da9b4"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/93c3593a-51a0-4792-b7ba-65c8a8b2df59\/de39707b-d775-46a5-b61a-e501fac0e6f9\/5a625fe3-9db4-40cd-82c0-169c45d68569\/c8126f5a-221d-4e63-87ad-b7d6706da9b4"
+                    },
+                    "characteristics": {
+                        "item": [{
+                                "characteristic": "itemType",
+                                "value": {
+                                    "valueDetail": "CustomerFacingServiceSpec"
+                                }
+                            },
+                            {
+                                "characteristic": "itemCode",
+                                "value": {
+                                    "valueDetail": "CFS_ConnectivityManagement"
+                                }
+                            },
+                            {
+                                "characteristic": "baseItemCode",
+                                "value": {
+                                    "valueDetail": "base_CustomerFacingServiceSpec"
+                                }
+                            },
+                            {
+                                "characteristic": "VPNId",
+                                "value": {
+                                    "valueDetail": "Default"
+                                }
+                            }
+                        ]
+                    },
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11530
+                },
+                "orderItemSpecKey": {
+                    "type": "CFS",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "SDWAN CFS",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "ID_6xfq05nl8k"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "CFS",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/af982bf2-45af-4ee8-a8ae-e1da2114bfe7\/23459c23-dff5-4b58-b0f1-206b0b2c4fc7\/9d9487c3-7650-4297-b859-fa097461388c"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/af982bf2-45af-4ee8-a8ae-e1da2114bfe7\/23459c23-dff5-4b58-b0f1-206b0b2c4fc7\/9d9487c3-7650-4297-b859-fa097461388c"
+                    },
+                    "characteristics": {},
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            },
+            {
+                "action": "Add",
+                "orderItemKey": {
+                    "type": "soi_order_item",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": 11518
+                },
+                "orderItemSpecKey": {
+                    "type": "Product",
+                    "primaryKey": {
+                        "value": -1
+                    },
+                    "externalKey": -1
+                },
+                "displayId": "Edge Site",
+                "operation": "CREATE",
+                "source": "SOI",
+                "characteristics": {},
+                "entity": {
+                    "entityKey": {
+                        "type": "Product",
+                        "primaryKey": {
+                            "value": "ID_xnmhvi80my"
+                        }
+                    },
+                    "entitySpecKey": {
+                        "type": "Product",
+                        "primaryKey": {
+                            "value": "\/fabe9957-089e-4dbb-8057-e331d0098032\/93c3593a-51a0-4792-b7ba-65c8a8b2df59\/de39707b-d775-46a5-b61a-e501fac0e6f9"
+                        },
+                        "externalKey": "\/fabe9957-089e-4dbb-8057-e331d0098032\/93c3593a-51a0-4792-b7ba-65c8a8b2df59\/de39707b-d775-46a5-b61a-e501fac0e6f9"
+                    },
+                    "characteristics": {
+                        "item": [{
+                                "characteristic": "Resilience (BT)",
+                                "value": {
+                                    "valueDetail": "Load Balanced"
+                                }
+                            },
+                            {
+                                "characteristic": "Size (BT)",
+                                "value": {
+                                    "valueDetail": "Large"
+                                }
+                            },
+                            {
+                                "characteristic": "Topology (BT)",
+                                "value": {
+                                    "valueDetail": "Standard"
+                                }
+                            }
+                        ]
+                    },
+                    "complexCharacteristics": {},
+                    "entityLinks": {}
+                }
+            }
+        ]
+    }
+}
