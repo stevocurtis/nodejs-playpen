@@ -44,13 +44,6 @@ function getAssedTypeFromOrderItem(orderItem) {
     return type;
 }
 
-function getAssedIdXpathFromOrderItem(orderItem) {
-    primaryKeyXpath = orderItem.entity.entitySpecKey.primaryKey.value;
-    console.log('found order item primary xpath key', primaryKeyXpath);
-    xpathTokens = primaryKeyXpath.split('/');
-    console.log('found order item xpathTokens', xpathTokens);
-}
-
 function getAncestordIdFromOrderItem(orderItem, ancestorLevel) {
     let id = undefined;
     try {
