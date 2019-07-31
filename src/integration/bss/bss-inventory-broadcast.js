@@ -26,10 +26,30 @@ module.exports = {
     },
 
     //
-    // This function simulates the work to update inlife inventory
+    // This function parses the payload and stores useful data
     //
-    writeInlifeInventory: function(enrichedBssItems) {
-        inlifeInventoryWrite.createInlifeAsset(enrichedBssItems)
+    writeEnrichedBSSInventoryItems: function(enrichedBssOrderItems) {
+
+        // simulate the inlife asset writes
+        enrichedBssOrderItems.forEach(function(enrichedBssOrderItem) {
+
+            inlifeAssetWriteResponse = inlifeInventoryWrite.writeInlifeAsset(enrichedBssOrderItem);
+            // enrich the bss asset further with the inlife id
+            if (inlifeAssetWriteResponse && inlifeAssetWriteResponse.sys_id) {
+                console.log('adding inlife service id', inlifeAssetWriteResponse.sys_id, 'to bss id', enrichedBssOrderItem.id);
+                enrichedBssOrderItem.inlifeId = inlifeAssetWriteResponse.sys_id;
+            }
+        });
+
+        // simulate the inlife asset relationship writes
+        enrichedBssOrderItems.forEach(function(enrichedBssOrderItem) {
+
+            parent = getParentEnrichedItem(this.enrichedBssOrderItems, enrichedBssOrderItem.parentId);
+            console.log('#####################', parent);
+            if (parent) {
+                console.log('build relationship between item id', enrichedBssOrderItem.id, 'with type', enrichedBssOrderItem.type, 'and parent id', parent.id, 'with type', parent.type);
+            }
+        });
     }
 }
 
@@ -59,4 +79,18 @@ function getAncestordIdFromOrderItem(orderItem, ancestorLevel) {
     }
     console.log('returning ancestor id', id);
     return id;
+}
+
+function getParentEnrichedItem(items, parentId) {
+    let parent = undefined;
+    if (parentId && items) {
+        items.forEach(item => {
+            if (item && parentId === item.id) {
+                parent = item;
+                break;
+            }
+        })
+    }
+    console.log('parent id', parentId, 'found item', parent);
+    return parent;
 }

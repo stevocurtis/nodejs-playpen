@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "start": "nodemon --use_strict -r dotenv/config src/server.js",
-        "test": "mocha ./src/**/*.spec.js"
+        "test": "mocha ./src/**/bss*.spec.js"
     },
     "keywords": [],
     "author": "",
