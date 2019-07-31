@@ -21,7 +21,7 @@ function sendToUrl(url) {
     const requestPromiseOptions = {
         method: 'POST',
         headers: {
-            'Authorization': 'Basic YWRtaW46SGc1NjYhQUJD',
+            'Authorization': config.assuranceAuthString,
             'Accept': 'application/json',
             'Content-Type': 'application/json'    
         },
