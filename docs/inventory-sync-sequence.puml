@@ -1,0 +1,10 @@
+@startuml
+participant "Sigma OM" as sigmaom
+participant "Ericsson Orchestrator" as ericssonorch
+participant "Service Now CMDB" as snowcmdb
+participant "Apigee Gateway" as apigee
+sigmaom -> sigmaom: Authentication Request
+ericssonorch --> sigmaom: Authentication Request
+ericssonorch --> snowcmdb
+sigmaom <-> apigee
+@enduml
