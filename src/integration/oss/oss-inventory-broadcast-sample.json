@@ -1,0 +1,280 @@
+{
+    "type": "ond/provisioningorder",
+    "name": "ADD-BT-SDW-POC2:RFS_CPE-RFS_CPE_CITIBANK_RIVERSIDE",
+    "clientId": "soapUI",
+    "clientCorrelationId": "Corr-Wed Jul 31 2019 10:50:59 GMT+0200 (CEST)",
+    "expectedCompletionDate": "2019-08-31Z",
+    "suppressProvisioningEvent": true,
+    "provisioningOrderItems": [{
+        "type": "ond/provisioningorderitem",
+        "serviceType": "BT-SDW-POC2:RFS_CPE",
+        "serviceName": "RFS_CPE_CITIBANK_RIVERSIDE",
+        "action": "ADD",
+        "status": "ASSIGN_COMPLETE",
+        "addChangeStatus": "PENDING",
+        "disconnectStatus": "PENDING DECOMMISSION",
+        "requestData": {
+            "type": "ond/service",
+            "dynamicAttributes": [{
+                    "groupName": "site",
+                    "attributeName": "name",
+                    "stringAttributeValue": "CITIBANK-RIVERSIDE-WEST"
+                },
+                {
+                    "groupName": "vendor",
+                    "attributeName": "name",
+                    "stringAttributeValue": "CISCO"
+                },
+                {
+                    "groupName": "customer",
+                    "attributeName": "ID",
+                    "stringAttributeValue": "CITIBANK"
+                },
+                {
+                    "groupName": "iprange",
+                    "attributeName": "CIDR",
+                    "integerAttributeValue": 16
+                }
+            ]
+        },
+        "serviceGraph": {
+            "type": "ouie/servicegraph",
+            "serviceName": "RFS_CPE_CITIBANK_RIVERSIDE",
+            "serviceType": "BT-SDW-POC2:RFS_CPE",
+            "vertices": [{
+                    "type": "ouie/servicecomponent",
+                    "graphId": "SC.BT-SDW-POC2RFS_CPE.RFS_CPE_CITIBANK_RIVERSIDE.4739A139-7F000001-71ACC80D-38A41228",
+                    "name": "RFS_CPE_CITIBANK_RIVERSIDE",
+                    "_type": "BT-SDW-POC2:RFS_CPE",
+                    "action": "ADD",
+                    "requestData": {
+                        "type": "ond/service",
+                        "dynamicAttributes": [{
+                                "groupName": "site",
+                                "attributeName": "name",
+                                "stringAttributeValue": "CITIBANK-RIVERSIDE-WEST"
+                            },
+                            {
+                                "groupName": "vendor",
+                                "attributeName": "name",
+                                "stringAttributeValue": "CISCO"
+                            },
+                            {
+                                "groupName": "customer",
+                                "attributeName": "ID",
+                                "stringAttributeValue": "CITIBANK"
+                            },
+                            {
+                                "groupName": "iprange",
+                                "attributeName": "CIDR",
+                                "integerAttributeValue": 16
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "ouie/serviceelement",
+                    "graphId": "SE.ocisite.CITIBANK-RIVERSIDE-WEST.4739A1E6-7F000001-71ACC80D-F7B1A276",
+                    "name": "CITIBANK-RIVERSIDE-WEST",
+                    "_type": "oci:site",
+                    "data": {
+                        "type": "oci/site",
+                        "id": 615,
+                        "href": "oci/site/615",
+                        "transientAttributes": {},
+                        "name": "CITIBANK-RIVERSIDE-WEST",
+                        "siteId": "CR",
+                        "status": "ACTIVE",
+                        "_type": "CUSTOMER SITE",
+                        "lastModifiedOn": "2019-07-26T06:57:16.903-04:00",
+                        "lastModifiedBy": "sysadm",
+                        "country": "UK",
+                        "address": "41 Cliftonville Rd",
+                        "stateProv": "NI",
+                        "county": "Ulster",
+                        "city": "Belfast",
+                        "postalCode1": "BT14 6JN",
+                        "scheduledDate": "2019-08-31T00:00:00.000Z",
+                        "versionNumber": 2,
+                        "key": {
+                            "type": "oci/siteKey",
+                            "keyValue": 615
+                        }
+                    }
+                },
+                {
+                    "type": "ouie/serviceelement",
+                    "graphId": "SE.ocicustomer.CITIBANK.4739A1EF-7F000001-71ACC80D-3E13A283",
+                    "name": "CITIBANK",
+                    "_type": "oci:customer",
+                    "data": {
+                        "type": "oci/customer",
+                        "id": 263,
+                        "href": "oci/customer/263",
+                        "transientAttributes": {},
+                        "name": "CITIBANK",
+                        "customerName": "CITIBANK",
+                        "status": "ACTIVE",
+                        "_type": "VNF Customer",
+                        "city": "Belfast",
+                        "stateProv": "NI",
+                        "country": "UK",
+                        "lastModifiedOn": "2019-07-25T11:57:17.028-04:00",
+                        "lastModifiedBy": "sysadm",
+                        "versionNumber": 1,
+                        "key": {
+                            "type": "oci/customerKey",
+                            "keyValue": 263
+                        }
+                    }
+                },
+                {
+                    "type": "ouie/serviceelement",
+                    "graphId": "SE.ocishelf.CITIBANK-RIVERSIDE-WEST-CPE.4739A1FC-7F000001-71ACC80D-6F6FF00B",
+                    "name": "CITIBANK-RIVERSIDE-WEST-CPE",
+                    "_type": "oci:shelf",
+                    "data": {
+                        "type": "oci/shelf",
+                        "id": 1715,
+                        "href": "oci/shelf/1715",
+                        "transientAttributes": {},
+                        "name": "CITIBANK-RIVERSIDE-WEST-CPE",
+                        "_type": "PCEROUTER",
+                        "vendor": "CISCO",
+                        "scheduledDate": "2019-08-31T00:00:00.000Z",
+                        "status": "ACTIVE",
+                        "lastModifiedOn": "2019-07-26T06:57:16.871-04:00",
+                        "lastModifiedBy": "sysadm",
+                        "versionNumber": 2,
+                        "key": {
+                            "type": "oci/shelfKey",
+                            "keyValue": 1715
+                        }
+                    }
+                },
+                {
+                    "type": "ouie/serviceelement",
+                    "graphId": "SE.ipmipRange.40.0.0.016.4739A208-7F000001-71ACC80D-38C64416",
+                    "name": "40.0.0.0/16",
+                    "_type": "ipm:ipRange",
+                    "data": {
+                        "type": "ipm/iprange",
+                        "id": 281,
+                        "href": "ipm/iprange/281",
+                        "transientAttributes": {},
+                        "createdOn": "2019-04-11T13:42:51.760-04:00",
+                        "createdBy": "sysadm",
+                        "lastModifiedOn": "2019-04-12T09:17:03.420-04:00",
+                        "lastModifiedBy": "sysadm",
+                        "versionNumber": 2,
+                        "ipRangeCidrMask": 16,
+                        "ipRangeEnd": "40.0.255.255",
+                        "ipRangeEndHexNumber": "0000000000000000000000002800FFFF",
+                        "ipRangeFormat": "IPV4",
+                        "ipRangeStart": "40.0.0.0",
+                        "ipRangeStartHexNumber": "00000000000000000000000028000000",
+                        "name": "40.0.0.0/16",
+                        "status": "ACTIVE",
+                        "key": {
+                            "type": "ipm/iprangeKey",
+                            "keyValue": 281
+                        }
+                    }
+                },
+                {
+                    "type": "ouie/serviceelement",
+                    "graphId": "SE.ipmipAddress.CPE_LRS_ipaddress.4739A208-7F000001-71ACC80D-3D0869A0.4739A208-7F000001-71ACC80D-4CA02E34",
+                    "name": "CPE_LRS_ipaddress.4739A208-7F000001-71ACC80D-3D0869A0",
+                    "_type": "ipm:ipAddress",
+                    "action": "CREATE",
+                    "status": "PENDING",
+                    "expectedCompletionDate": "2019-08-31Z",
+                    "data": {
+                        "type": "ipm/ipaddress",
+                        "id": 885,
+                        "href": "ipm/ipaddress/885",
+                        "transientAttributes": {},
+                        "createdOn": "2019-07-31T04:50:55.907-04:00",
+                        "createdBy": "sysadm",
+                        "lastModifiedOn": "2019-07-31T04:50:55.935-04:00",
+                        "lastModifiedBy": "sysadm",
+                        "versionNumber": 2,
+                        "assignmentType": "ASSIGNED",
+                        "ipAddressHexNumber": "000000000000000000000000280000B7",
+                        "ipAddressFormat": "IPV4",
+                        "name": "40.0.0.183",
+                        "scheduledDate": "2019-08-31T00:00:00.000Z",
+                        "status": "PENDING",
+                        "key": {
+                            "type": "ipm/ipaddressKey",
+                            "keyValue": 885
+                        }
+                    }
+                }
+            ],
+            "edges": [{
+                    "type": "ouie/edge",
+                    "outVertex": "SC.BT-SDW-POC2RFS_CPE.RFS_CPE_CITIBANK_RIVERSIDE.4739A139-7F000001-71ACC80D-38A41228",
+                    "_type": "site",
+                    "inVertex": "SE.ocisite.CITIBANK-RIVERSIDE-WEST.4739A1E6-7F000001-71ACC80D-F7B1A276"
+                },
+                {
+                    "type": "ouie/edge",
+                    "outVertex": "SC.BT-SDW-POC2RFS_CPE.RFS_CPE_CITIBANK_RIVERSIDE.4739A139-7F000001-71ACC80D-38A41228",
+                    "_type": "customer",
+                    "inVertex": "SE.ocicustomer.CITIBANK.4739A1EF-7F000001-71ACC80D-3E13A283"
+                },
+                {
+                    "type": "ouie/edge",
+                    "outVertex": "SC.BT-SDW-POC2RFS_CPE.RFS_CPE_CITIBANK_RIVERSIDE.4739A139-7F000001-71ACC80D-38A41228",
+                    "_type": "CPE_LRS",
+                    "inVertex": "SE.ocishelf.CITIBANK-RIVERSIDE-WEST-CPE.4739A1FC-7F000001-71ACC80D-6F6FF00B"
+                },
+                {
+                    "type": "ouie/edge",
+                    "outVertex": "SC.BT-SDW-POC2RFS_CPE.RFS_CPE_CITIBANK_RIVERSIDE.4739A139-7F000001-71ACC80D-38A41228",
+                    "_type": "iprange",
+                    "inVertex": "SE.ipmipRange.40.0.0.016.4739A208-7F000001-71ACC80D-38C64416"
+                },
+                {
+                    "type": "ouie/edge",
+                    "outVertex": "SC.BT-SDW-POC2RFS_CPE.RFS_CPE_CITIBANK_RIVERSIDE.4739A139-7F000001-71ACC80D-38A41228",
+                    "_type": "CPE_LRS_ipaddress",
+                    "inVertex": "SE.ipmipAddress.CPE_LRS_ipaddress.4739A208-7F000001-71ACC80D-3D0869A0.4739A208-7F000001-71ACC80D-4CA02E34"
+                },
+                {
+                    "type": "ouie/edge",
+                    "outVertex": "SE.ocisite.CITIBANK-RIVERSIDE-WEST.4739A1E6-7F000001-71ACC80D-F7B1A276",
+                    "_type": "oci:site_to_equipment",
+                    "inVertex": "SE.ocishelf.CITIBANK-RIVERSIDE-WEST-CPE.4739A1FC-7F000001-71ACC80D-6F6FF00B"
+                },
+                {
+                    "type": "ouie/edge",
+                    "outVertex": "SE.ocisite.CITIBANK-RIVERSIDE-WEST.4739A1E6-7F000001-71ACC80D-F7B1A276",
+                    "_type": "oci:site_to_customer",
+                    "inVertex": "SE.ocicustomer.CITIBANK.4739A1EF-7F000001-71ACC80D-3E13A283"
+                },
+                {
+                    "type": "ouie/edge",
+                    "outVertex": "SE.ipmipRange.40.0.0.016.4739A208-7F000001-71ACC80D-38C64416",
+                    "_type": "ipm:ipRange_to_ipAddress",
+                    "inVertex": "SE.ipmipAddress.CPE_LRS_ipaddress.4739A208-7F000001-71ACC80D-3D0869A0.4739A208-7F000001-71ACC80D-4CA02E34",
+                    "action": "MAKE"
+                },
+                {
+                    "type": "ouie/edge",
+                    "outVertex": "SE.ipmipAddress.CPE_LRS_ipaddress.4739A208-7F000001-71ACC80D-3D0869A0.4739A208-7F000001-71ACC80D-4CA02E34",
+                    "_type": "ipm:ipAddress_to_managedObject",
+                    "inVertex": "SE.ocishelf.CITIBANK-RIVERSIDE-WEST-CPE.4739A1FC-7F000001-71ACC80D-6F6FF00B",
+                    "action": "MAKE"
+                }
+            ],
+            "rootServiceComponent": "SC.BT-SDW-POC2RFS_CPE.RFS_CPE_CITIBANK_RIVERSIDE.4739A139-7F000001-71ACC80D-38A41228",
+            "rootServiceElement": "SE.ipmipAddress.CPE_LRS_ipaddress.4739A208-7F000001-71ACC80D-3D0869A0.4739A208-7F000001-71ACC80D-4CA02E34"
+        }
+    }],
+    "relations": [{
+        "cfsId": "CFS_CPE",
+        "rfsId": "RFS_CPE"
+    }]
+}
