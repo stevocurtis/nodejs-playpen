@@ -3,16 +3,20 @@ const express = require('express');
 const router = express.Router();
 const requestPromise = require('request-promise');
 
-router.options('/create', (req, res) => {
-	res.set('Access-Control-Allow-Origin', 'http://localhost:4200');
-	res.set('Access-Control-Allow-Headers', 'Content-Type');
+//app.use(express.json());
 
-   res.send();
-});
+//router.options('/create', (req, res) => {
+//
+
+//   res.send();
+//});
 
 router.post('/create', (req, res) => {
    // Promise.all(config.assuranceUrls.map((url) => sendToUrl(url))).then((eventResponses) => {
-	sendToUrl(config.assuranceUrl);
+   	console.log("REQUEST BODY" + req.body);
+   	console.log("REQUEST BODY JSON" + JSON.stringify(req.body));
+
+	sendToUrl(config.assuranceUrl, req.body);
     //console.log('all done with event responses', eventResponses);
    //res.set('Access-Control-Allow-Origin', '*');
    res.set('Access-Control-Allow-Origin', 'http://localhost:4200');
@@ -21,7 +25,7 @@ router.post('/create', (req, res) => {
 
 });
 
-function sendToUrl(url) {
+function sendToUrl(url, requestBody) {
     console.log('sending request to url', url);
     //console.log('with payload', config.eventPayload);
 
@@ -32,11 +36,7 @@ function sendToUrl(url) {
             'Accept': 'application/json',
             'Content-Type': 'application/json'    
         },
-    	body: {
-            'short_description': 'Test case Robert from node', 
-            'channel': 'Web', 
-            'priority': '3 - Moderate'
-        },
+    	body: requestBody,
         uri: url,
         json: true,
         resolveWithFullResponse: true

@@ -5,6 +5,8 @@ module.exports.httpClientTimeoutMs = process.env.HTTP_CLIENT_TIMEOUT_MS;
 module.exports.eventPayload = process.env.EVENT_PAYLOAD;
 module.exports.assuranceUrl = process.env.ASSURANCE_URL;
 module.exports.assuranceAuthString = process.env.ASSURANCE_BASIC_AUTH_STRING;
+module.exports.corsAllow = process.env.CORS_ACAO;
+
 
 // parse broadcast urls
 var broadcastUrls = [];
