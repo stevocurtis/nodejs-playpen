@@ -3,6 +3,7 @@ const dotenv = require('dotenv').config();
 module.exports.port = process.env.PORT;
 module.exports.httpClientTimeoutMs = process.env.HTTP_CLIENT_TIMEOUT_MS;
 module.exports.eventPayload = process.env.EVENT_PAYLOAD;
+module.exports.assuranceUrl = process.env.ASSURANCE_URL;
 
 // parse broadcast urls
 var broadcastUrls = [];
