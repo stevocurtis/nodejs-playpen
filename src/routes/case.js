@@ -3,12 +3,19 @@ const express = require('express');
 const router = express.Router();
 const requestPromise = require('request-promise');
 
+router.options('/create', (req, res) => {
+	res.set('Access-Control-Allow-Origin', 'http://localhost:4200');
+	res.set('Access-Control-Allow-Headers', 'Content-Type');
+
+   res.send();
+});
 
 router.post('/create', (req, res) => {
    // Promise.all(config.assuranceUrls.map((url) => sendToUrl(url))).then((eventResponses) => {
-        sendToUrl(config.assuranceUrl);
+	sendToUrl(config.assuranceUrl);
     //console.log('all done with event responses', eventResponses);
-  
+   //res.set('Access-Control-Allow-Origin', '*');
+   res.set('Access-Control-Allow-Origin', 'http://localhost:4200');
    res.send(JSON.stringify({ status: "done" }));
    // });
 
