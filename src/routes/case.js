@@ -18,8 +18,6 @@ router.post('/create', (req, res) => {
 
 	sendToUrl(config.assuranceUrl, req.body);
     //console.log('all done with event responses', eventResponses);
-   //res.set('Access-Control-Allow-Origin', '*');
-   res.set('Access-Control-Allow-Origin', 'http://localhost:4200');
    res.send(JSON.stringify({ status: "done" }));
    // });
 
