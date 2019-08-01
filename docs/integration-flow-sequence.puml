@@ -53,11 +53,13 @@ apigee -> snow: POST configuration item
 snow -> apigee: enrich asset with returned snow sys id
 end
 
-loop for each rfs asset with a link to an external cfs
+loop for each rerource asset with a link to an rfs
 apigee -> snow: POST relationship between\nparent and child configuration items
 end
 
-loop for each rerource asset with a link to an rfs
+loop for each rfs asset with a link to an external cfs
+apigee <-> snow: POST lookup to snow sys id of CFS asset
+apigee <-> apigee: enrich payload with snow sys id
 apigee -> snow: POST relationship between\nparent and child configuration items
 end
 
