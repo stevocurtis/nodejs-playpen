@@ -44,11 +44,12 @@ function sendToUrl(url, requestBody) {
 
     return requestPromise(requestPromiseOptions)
         .then((response) => {
+            console.log('Got response');
         	console.log(response.body);
             return url + ' ' + response.statusCode;
         })
         .catch((err) => {
-            // console.error(err); makes content a bit verbose
+            console.error(err); 
             return url + ' ' + err.statusCode;
         });
 }
