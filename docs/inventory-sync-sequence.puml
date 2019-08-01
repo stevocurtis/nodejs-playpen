@@ -11,6 +11,14 @@ participant "Apigee Gateway" as apigee
 ' box "Inlife"
 participant "Service Now CMDB" as snow
 ' end box
+== Service Orchestration ==
+sigma -> apigee: POST tmf 641 service order request
+apigee -> ericsson: POST tmf 641 service order request
+loop for each ???
+ericsson -> apigee: POST tmf 641 service order notification
+apigee -> sigma: POST tmf 641 service order notification
+end
+
 == BSS Inventory Sync ==
 sigma -> sigma: all product and\ncfs assets in service
 sigma -> apigee: POST omnixml payload
