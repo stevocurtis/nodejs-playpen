@@ -1,10 +1,56 @@
 @startuml
-participant "Sigma OM" as sigmaom
-participant "Ericsson Orchestrator" as ericssonorch
-participant "Service Now CMDB" as snowcmdb
+' box "BSS"
+participant "Sigma OM" as sigma
+' end box
+' box "OSS"
+participant "Ericsson Orch" as ericsson
+' end box
+' box "Integration"
 participant "Apigee Gateway" as apigee
-sigmaom -> sigmaom: Authentication Request
-ericssonorch --> sigmaom: Authentication Request
-ericssonorch --> snowcmdb
-sigmaom <-> apigee
+' end box
+' box "Inlife"
+participant "Service Now CMDB" as snow
+' end box
+== BSS Inventory Sync ==
+sigma -> sigma: all product and\ncfs assets in service
+sigma -> apigee: POST omnixml payload
+activate apigee
+
+apigee --> apigee: translate payload from xml to json
+loop for each product or cfs order item
+apigee --> apigee: enrich payload with\nasset id, parent asset id\ntype, snow class
+
+apigee -> snow: POST configuration item
+snow -> apigee: enrich asset with returned snow sys id
+end
+
+loop for each asset with a link to a product or cfs asset
+apigee -> snow: POST relationship between\nparent and child configuration items
+end
+
+apigee -> sigma: return summary of created entities
+deactivate apigee
+
+== OSS Inventory Sync ==
+ericsson -> ericsson: all rfs and\nresource assets in service
+ericsson -> apigee: POST ericsson inventory payload
+activate apigee
+
+loop for each rfs or resource order item
+apigee --> apigee: enrich payload with\nasset id, parent asset id\ntype, snow class
+
+apigee -> snow: POST configuration item
+snow -> apigee: enrich asset with returned snow sys id
+end
+
+loop for each rfs asset with a link to an external cfs
+apigee -> snow: POST relationship between\nparent and child configuration items
+end
+
+loop for each rerource asset with a link to an rfs
+apigee -> snow: POST relationship between\nparent and child configuration items
+end
+
+apigee -> ericsson: return summary of created entities
+deactivate apigee
 @enduml
