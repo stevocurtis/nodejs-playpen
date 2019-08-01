@@ -6,18 +6,20 @@ participant "Sigma OM" as sigma
 participant "Ericsson Orch" as ericsson
 ' end box
 ' box "Integration"
+actor "3rd Party Service Desk" as inlifeuser
 participant "Apigee Gateway" as apigee
 ' end box
 ' box "Inlife"
 participant "Service Now CMDB" as snow
+
 ' end box
 == Service Orchestration ==
-sigma -> apigee: POST tmf 641 service order request
-apigee -> ericsson: POST tmf 641 service order request
-loop for each ???
+sigma <-> apigee: POST tmf 641 service order request containing cfs, returns ack
+apigee <-> ericsson: POST tmf 641 service order request, returns ack
+' loop for each cfs
 ericsson -> apigee: POST tmf 641 service order notification
 apigee -> sigma: POST tmf 641 service order notification
-end
+' end
 
 == BSS Inventory Sync ==
 sigma -> sigma: all product and\ncfs assets in service
@@ -61,4 +63,8 @@ end
 
 apigee -> ericsson: return summary of created entities
 deactivate apigee
+
+== Incident Creation ==
+inlifeuser <-> apigee: POST case creation, return snow case id
+apigee <-> snow: POST case creation, return snow case id
 @enduml
