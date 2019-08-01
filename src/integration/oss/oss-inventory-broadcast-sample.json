@@ -2,11 +2,12 @@
     "type": "ond/provisioningorder",
     "name": "ADD-BT-SDW-POC2:RFS_CPE-RFS_CPE_CITIBANK_RIVERSIDE",
     "clientId": "soapUI",
-    "clientCorrelationId": "Corr-Wed Jul 31 2019 17:56:38 GMT+0200 (CEST)",
+    "clientCorrelationId": "Corr-Thu Aug 01 2019 14:45:42 GMT+0100 (BST)",
     "provisioningOrderItems": [{
         "type": "ond/provisioningorderitem",
         "serviceType": "BT-SDW-POC2:RFS_CPE",
         "serviceName": "RFS_CPE_CITIBANK_RIVERSIDE",
+        "serviceInstance": "RFS_CPE",
         "action": "ADD",
         "status": "ASSIGN_COMPLETE",
         "addChangeStatus": "PENDING",
@@ -40,7 +41,7 @@
             "serviceType": "BT-SDW-POC2:RFS_CPE",
             "vertices": [{
                     "type": "ouie/serviceelement",
-                    "graphId": "SE.ocishelf.CITIBANK-RIVERSIDE-WEST-CPE.48BF4FF5-7F000001-71ACC80D-D7CAB8AA",
+                    "graphId": "SE.ocishelf.CITIBANK-RIVERSIDE-WEST-CPE.4D6DCCA5-7F000001-71ACC80D-4194B10D",
                     "name": "CITIBANK-RIVERSIDE-WEST-CPE",
                     "_type": "oci:shelf",
                     "data": {
@@ -54,60 +55,57 @@
                 },
                 {
                     "type": "ouie/serviceelement",
-                    "graphId": "SE.ipmipAddress.CPE_LRS_ipaddress.48BF4FFA-7F000001-71ACC80D-2AF7925D.48BF4FFA-7F000001-71ACC80D-0172F22C",
-                    "name": "CPE_LRS_ipaddress.48BF4FFA-7F000001-71ACC80D-2AF7925D",
+                    "graphId": "SE.ipmipAddress.CPE_LRS_ipaddress.4D6DCCAA-7F000001-71ACC80D-2E8EC840.4D6DCCAA-7F000001-71ACC80D-904CA15E",
+                    "name": "CPE_LRS_ipaddress.4D6DCCAA-7F000001-71ACC80D-2E8EC840",
                     "_type": "ipm:ipAddress",
                     "action": "CREATE",
                     "data": {
                         "type": "ipm/ipaddress",
-                        "href": "ipm/ipaddress/917",
-                        "name": "40.0.0.215",
+                        "href": "ipm/ipaddress/955",
+                        "name": "40.0.0.253",
                         "status": "PENDING"
                     }
                 }
             ],
-            "rootServiceComponent": "SC.BT-SDW-POC2RFS_CPE.RFS_CPE_CITIBANK_RIVERSIDE.48BF4FE2-7F000001-71ACC80D-AC39103E",
-            "rootServiceElement": "SE.ipmipAddress.CPE_LRS_ipaddress.48BF4FFA-7F000001-71ACC80D-2AF7925D.48BF4FFA-7F000001-71ACC80D-0172F22C"
+            "rootServiceComponent": "SC.BT-SDW-POC2RFS_CPE.RFS_CPE_CITIBANK_RIVERSIDE.4D6DCC91-7F000001-71ACC80D-7F03B5AA",
+            "rootServiceElement": "SE.ipmipAddress.CPE_LRS_ipaddress.4D6DCCAA-7F000001-71ACC80D-2E8EC840.4D6DCCAA-7F000001-71ACC80D-904CA15E"
         }
     }],
     "relations": [{
         "cfsId": "CFS_CPE",
-        "rfsId": "RFS_CPE"
+        "cfsInstanceId": "CFS123",
+        "rfsId": "RFS_CPE",
+        "cfsProductName": "CFS Product Name"
     }],
     "serviceOrderItems": [{
-        "id": "30000900122000",
+        "id": "170000920117004",
         "externalId": "NC1233",
         "description": "Service order for VPN",
         "state": "OPEN.PROCESSING.RUNNING",
-        "orderDate": "2019-07-31T15:54:24.000Z",
-        "requestedCompletionDate": "2019-08-02T00:00:00.000Z",
+        "orderDate": "2019-08-01T13:45:24.000Z",
+        "requestedCompletionDate": "2019-08-05T00:00:00.000Z",
         "orderItem": [{
                 "id": "0",
                 "action": "Add",
                 "state": "STARTED",
                 "@baseType": "ServiceOrderItem",
                 "service": {
-                    "id": "17709085",
+                    "id": "17805199",
                     "serviceState": "PLN_DSGN",
                     "serviceSpecification": {
-                        "id": "17708876",
+                        "id": "17804967",
                         "name": "CFS_CPE",
                         "baseType": "ServiceSpecification"
                     },
                     "serviceCharacteristic": [{
+                            "name": "site",
+                            "valueType": "String",
+                            "value": "CITIBANK-RIVERSIDE-WEST"
+                        },
+                        {
                             "name": "manufacturer",
                             "valueType": "String",
                             "value": "CISCO"
-                        },
-                        {
-                            "name": "model",
-                            "valueType": "String",
-                            "value": "test_model"
-                        },
-                        {
-                            "name": "supportedBandwidth",
-                            "valueType": "String",
-                            "value": "test_bw"
                         },
                         {
                             "name": "serviceName",
@@ -120,9 +118,19 @@
                             "value": "BT-SDW-POC2:RFS_CPE"
                         },
                         {
-                            "name": "site",
+                            "name": "supportedBandwidth",
                             "valueType": "String",
-                            "value": "CITIBANK-RIVERSIDE-WEST"
+                            "value": "test_bw"
+                        },
+                        {
+                            "name": "cfsInstanceId",
+                            "valueType": "String",
+                            "value": "CFS123"
+                        },
+                        {
+                            "name": "cfsProductName",
+                            "valueType": "String",
+                            "value": "CFS Product Name"
                         }
                     ]
                 }
@@ -133,10 +141,10 @@
                 "state": "STARTED",
                 "@baseType": "ServiceOrderItem",
                 "service": {
-                    "id": "17709086",
+                    "id": "17805200",
                     "serviceState": "PLN_DSGN",
                     "serviceSpecification": {
-                        "id": "17708877",
+                        "id": "17804968",
                         "name": "CFS_BTInstall",
                         "baseType": "ServiceSpecification"
                     },
@@ -153,10 +161,10 @@
                 "state": "STARTED",
                 "@baseType": "ServiceOrderItem",
                 "service": {
-                    "id": "17709088",
+                    "id": "17805202",
                     "serviceState": "PLN_DSGN",
                     "serviceSpecification": {
-                        "id": "17708879",
+                        "id": "17804970",
                         "name": "CFS_ConnectivityManagement",
                         "baseType": "ServiceSpecification"
                     }
@@ -168,10 +176,10 @@
                 "state": "STARTED",
                 "@baseType": "ServiceOrderItem",
                 "service": {
-                    "id": "17709089",
+                    "id": "17805203",
                     "serviceState": "PLN_DSGN",
                     "serviceSpecification": {
-                        "id": "17708880",
+                        "id": "17804971",
                         "name": "CFS_SelfInstall",
                         "baseType": "ServiceSpecification"
                     },
@@ -180,6 +188,21 @@
                         "valueType": "String",
                         "value": "PLN_DSGN"
                     }]
+                }
+            },
+            {
+                "id": "1",
+                "action": "Add",
+                "state": "STARTED",
+                "@baseType": "ServiceOrderItem",
+                "service": {
+                    "id": "17805217",
+                    "serviceState": "PLN_DSGN",
+                    "serviceSpecification": {
+                        "id": "17805014",
+                        "name": "CFS_ManagedvFirewall",
+                        "baseType": "ServiceSpecification"
+                    }
                 }
             }
         ],
@@ -194,7 +217,7 @@
             {
                 "id": "BSS-NC",
                 "role": "Requester",
-                "name": "Sigma"
+                "name": "SigmaNew"
             }
         ]
     }]
