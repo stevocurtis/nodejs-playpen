@@ -28,14 +28,13 @@ describe("OSS Inventory Broadcast Tests", function() {
         // check id and parent id
         chai.assert.equal(
             this.enrichedOrderItems[0].id,
-            "SE.ocishelf.CITIBANK-RIVERSIDE-WEST-CPE.48BF4FF5-7F000001-71ACC80D-D7CAB8AA",
+            "SE.ocishelf.CITIBANK-RIVERSIDE-WEST-CPE.4D6DCCA5-7F000001-71ACC80D-4194B10D",
             "primary id does not match"
         );
-        // chai.assert.equal(
-        //   this.enrichedOrderItems[0].parentId,
-        //   "de39707b-d775-46a5-b61a-e501fac0e6f9",
-        //   "parent id does not match"
-        // );
+        chai.assert.isOk(
+            this.enrichedOrderItems[0].parentId,
+            "parent id does not match"
+        );
         chai.assert.equal(
             this.enrichedOrderItems[0].type,
             "RFS",
@@ -46,12 +45,12 @@ describe("OSS Inventory Broadcast Tests", function() {
         // check id and parent id
         chai.assert.equal(
             this.enrichedOrderItems[1].id,
-            "SE.ipmipAddress.CPE_LRS_ipaddress.48BF4FFA-7F000001-71ACC80D-2AF7925D.48BF4FFA-7F000001-71ACC80D-0172F22C",
+            "SE.ipmipAddress.CPE_LRS_ipaddress.4D6DCCAA-7F000001-71ACC80D-2E8EC840.4D6DCCAA-7F000001-71ACC80D-904CA15E",
             "primary id does not match"
         );
         chai.assert.equal(
             this.enrichedOrderItems[1].parentId,
-            "SE.ocishelf.CITIBANK-RIVERSIDE-WEST-CPE.48BF4FF5-7F000001-71ACC80D-D7CAB8AA",
+            "SE.ocishelf.CITIBANK-RIVERSIDE-WEST-CPE.4D6DCCA5-7F000001-71ACC80D-4194B10D",
             "parent id does not match"
         );
         chai.assert.equal(

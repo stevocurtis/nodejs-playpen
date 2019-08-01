@@ -1,5 +1,6 @@
 var inlifeInventoryWrite = require("../inlife/inlife-inventory-write");
 var itilUtil = require("../inlife/itil-util");
+const uuid4 = require('uuid/v4');
 
 module.exports = {
     //
@@ -9,6 +10,7 @@ module.exports = {
         let enrichedOrderItems = [];
 
         if (payload && payload.provisioningOrderItems) {
+            let provItemsCounterIndex = 0;
             payload.provisioningOrderItems.forEach(provisioningOrderItem => {
                 if (
                     provisioningOrderItem &&
@@ -21,7 +23,7 @@ module.exports = {
                         enrichedOrderItems.push({
                             orderItem: provisioningOrderItem.serviceGraph.vertices[0],
                             id: provisioningOrderItem.serviceGraph.vertices[0].graphId,
-                            parentId: undefined, // TODO fix this properly
+                            parentId: getParentId(payload, provItemsCounterIndex),
                             type: "RFS",
                             class: itilUtil.ossRFSClass
                         });
@@ -39,6 +41,7 @@ module.exports = {
                             });
                     }
                 }
+                provItemsCounterIndex++; // increment so can find the correct parent cfs name
             });
         } else {
             console.error("oss inventory does not contain any items");
@@ -47,3 +50,28 @@ module.exports = {
         return enrichedOrderItems;
     }
 };
+
+function getParentId(payload, index) {
+
+    let parentId = undefined;
+    let parentInlifeClass = getParentCfsInlifeClass(payload, index);
+    if (parentInlifeClass) {
+        parentId = uuid4();
+    }
+    console.log('parentId is', parentId);
+    return parentId;
+}
+
+function getParentCfsInlifeClass(payload, index) {
+
+    let inlifeClass = undefined;
+    if (payload && payload.relations && payload.relations.length > index - 1) {
+        relation = payload.relations[index];
+        if (relation && relation.cfsProductName) {
+            inlifeClass = itilUtil.convertTmfDescriptionToItilClass(relation.cfsProductName);
+
+        }
+    }
+    console.log('inlifeClass is', inlifeClass);
+    return inlifeClass;
+}
