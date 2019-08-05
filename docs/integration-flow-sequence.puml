@@ -1,72 +1,75 @@
 @startuml
-' box "BSS"
 participant "Sigma OM" as sigma
-' end box
-' box "OSS"
 participant "Ericsson Orch" as ericsson
-' end box
-' box "Integration"
 actor "3rd Party Service Desk" as inlifeuser
 participant "Apigee Gateway" as apigee
-' end box
-' box "Inlife"
 participant "Service Now CMDB" as snow
 
-' end box
 == Service Orchestration ==
-sigma <-> apigee: POST tmf 641 service order request containing cfs, returns ack
-apigee <-> ericsson: POST tmf 641 service order request, returns ack
-' loop for each cfs
-ericsson -> apigee: POST tmf 641 service order notification
-apigee -> sigma: POST tmf 641 service order notification
-' end
+group Service Order Request
+    sigma -> apigee: POST tmf 641 service order request
+    activate apigee
+        apigee -> apigee: store order payload
+        apigee <-> ericsson: POST to oss and store response
+        apigee -> apigee: store response payload
+        apigee -> sigma: END POST tmf 641 service order notification containing response
+    deactivate apigee
+end
+
+loop Service Order Notifications
+    group Service Order Notification
+        ericsson -> apigee: POST tmf 641 service order notification
+        activate apigee
+            apigee -> apigee: store request payload
+            apigee -> sigma: forward  to bss
+            ericsson -> apigee: return ack 
+            apigee <-> sigma: END POST tmf 641 service order notification
+        deactivate apigee
+    end
+end
 
 == BSS Inventory Sync ==
 sigma -> sigma: all product and\ncfs assets in service
 sigma -> apigee: POST omnixml payload
 activate apigee
-
-apigee --> apigee: translate payload from xml to json
-loop for each product or cfs order item
-apigee --> apigee: enrich payload with\nasset id, parent asset id\ntype, snow class
-
-apigee -> snow: POST configuration item
-snow -> apigee: enrich asset with returned snow sys id
-end
-
-loop for each asset with a link to a product or cfs asset
-apigee -> snow: POST relationship between\nparent and child configuration items
-end
-
-apigee -> sigma: return summary of created entities
+    apigee --> apigee: translate payload from xml to json
+    loop for each product or cfs order item
+        apigee --> apigee: enrich payload with\nasset id, parent asset id\ntype, snow class
+        apigee -> snow: POST configuration item
+        snow -> apigee: enrich asset with returned snow sys id
+    end
+    loop for each asset with a link to a product or cfs asset
+        apigee -> snow: POST relationship between\nparent and child configuration items
+    end
+    apigee -> sigma: return summary of created entities
 deactivate apigee
 
 == OSS Inventory Sync ==
 ericsson -> ericsson: all rfs and\nresource assets in service
 ericsson -> apigee: POST ericsson inventory payload
 activate apigee
+    loop for each rfs or resource order item
+        apigee --> apigee: enrich payload with\nasset id, parent asset id\ntype, snow class
+        apigee -> snow: POST configuration item
+    snow -> apigee: enrich asset with returned snow sys id
+    end
 
-loop for each rfs or resource order item
-apigee --> apigee: enrich payload with\nasset id, parent asset id\ntype, snow class
+    loop for each rerource asset with a link to an rfs
+        apigee -> snow: POST relationship between\nparent and child configuration items
+    end
 
-apigee -> snow: POST configuration item
-snow -> apigee: enrich asset with returned snow sys id
-end
+    loop for each rfs asset with a link to an external cfs
+        apigee <-> snow: GET lookup to snow sys id of CFS asset
+        apigee <-> apigee: enrich payload with snow sys id
+        apigee -> snow: POST relationship between\nparent and child configuration items
+    end
 
-loop for each rerource asset with a link to an rfs
-apigee -> snow: POST relationship between\nparent and child configuration items
-end
-
-loop for each rfs asset with a link to an external cfs
-apigee <-> snow: GET lookup to snow sys id of CFS asset
-apigee <-> apigee: enrich payload with snow sys id
-apigee -> snow: POST relationship between\nparent and child configuration items
-end
-
-apigee -> ericsson: return summary of created entities
+    apigee -> ericsson: return summary of created entities
 deactivate apigee
 
 == Incident Creation ==
 inlifeuser <-> apigee: POST case creation, return snow case id
-apigee <-> snow: POST case creation, return snow case id
+group Create Case
+    apigee <-> snow: POST case creation, return snow case id
+end
 @enduml
