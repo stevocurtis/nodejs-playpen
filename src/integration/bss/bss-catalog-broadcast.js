@@ -10,7 +10,6 @@ module.exports = {
         if (payload && payload.Root && payload.Root.Bundle && payload.Root.Bundle.Product_To_Product) {
             numberRootProductOfferings = payload.Root.Bundle.Product_To_Product.length;
             console.log('received', numberRootProductOfferings, 'root product offerings');
-            // console.log('received 5 root product offerings');
         } else {
             console.log('no root product offerings received');
         }
