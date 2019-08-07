@@ -1,5 +1,5 @@
-var inlifeInventoryWrite = require("../inlife/inlife-inventory-write");
-var itilUtil = require("../inlife/itil-util");
+var inlifeInventoryWrite = require('../inlife/inlife-inventory-write');
+var itilUtil = require('../inlife/itil-util');
 const uuid4 = require('uuid/v4');
 
 module.exports = {
@@ -24,7 +24,7 @@ module.exports = {
                             orderItem: provisioningOrderItem.serviceGraph.vertices[0],
                             id: provisioningOrderItem.serviceGraph.vertices[0].graphId,
                             parentId: getParentId(payload, provItemsCounterIndex),
-                            type: "RFS",
+                            type: 'RFS',
                             class: itilUtil.ossRFSClass
                         });
                     }
@@ -36,7 +36,7 @@ module.exports = {
                                 orderItem: provisioningOrderItem.serviceGraph.vertices[vCounter],
                                 id: provisioningOrderItem.serviceGraph.vertices[vCounter].graphId,
                                 parentId: provisioningOrderItem.serviceGraph.vertices[0].graphId,
-                                type: "Resource",
+                                type: 'Resource',
                                 class: itilUtil.ossResourceClass
                             });
                     }
@@ -44,9 +44,9 @@ module.exports = {
                 provItemsCounterIndex++; // increment so can find the correct parent cfs name
             });
         } else {
-            console.error("oss inventory does not contain any items");
+            console.error('oss inventory does not contain any items');
         }
-        console.log("enrichedOrderItems", enrichedOrderItems);
+        console.log('enrichedOrderItems', enrichedOrderItems);
         return enrichedOrderItems;
     }
 };

@@ -21,34 +21,34 @@ router.post('/create', (req, res) => {
         headers: {
             'Authorization': config.assuranceAuthString,
             'Accept': 'application/json',
-            'Content-Type': 'application/json'    
+            'Content-Type': 'application/json'
         },
-    	body: requestBody,
+        body: requestBody,
         uri: url,
         json: true,
         resolveWithFullResponse: true
     };
 
-    requestPromise(requestPromiseOptions) 
+    requestPromise(requestPromiseOptions)
         .then(function(response) {
             console.log('case number' + response.body.result.number);
             res.send(JSON.stringify({ case_number: response.body.result.number }));
         })
         .catch(function(err) {
-            res.send(JSON.stringify({ error:  error }));
+            res.send(JSON.stringify({ error: error }));
         });
 
 
-    console.log("REQUEST BODY" + req.body);
-    console.log("REQUEST BODY JSON" + JSON.stringify(req.body));
+    console.log('REQUEST BODY' + req.body);
+    console.log('REQUEST BODY JSON' + JSON.stringify(req.body));
 
     //Promise.all(sendToUrl(config.assuranceUrl, req.body)).then((eventResponse) => {
- 
+
 
     //var cn = sendToUrl(config.assuranceUrl, req.body);
-       // console.log('next case number' + eventResponse);
+    // console.log('next case number' + eventResponse);
     //console.log('all done with event responses', eventResponses);
-     //   res.send(JSON.stringify({ case_number:  eventResponse}));
+    //   res.send(JSON.stringify({ case_number:  eventResponse}));
 });
 
 

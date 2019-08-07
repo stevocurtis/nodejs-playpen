@@ -13,9 +13,9 @@ module.exports = {
                 console.log('found item', item);
             });
         } else {
-            console.error("inlife change request does not contain any items");
+            console.error('inlife change request does not contain any items');
         }
-        console.log("found", enrichedOrderItems.length, "item(s)");
+        console.log('found', enrichedOrderItems.length, 'item(s)');
         return enrichedOrderItems;
     }
 };
