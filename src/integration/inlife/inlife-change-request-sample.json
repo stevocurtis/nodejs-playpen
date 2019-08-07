@@ -1,0 +1,33 @@
+{
+    "externalId": "MB-FWRC1",
+    "relatedParty": [{
+            "id": "BSS-NC",
+            "role": "Requester",
+            "name": "Sigma"
+        },
+        {}
+    ],
+    "orderItem": [{
+        "id": "FWRC1",
+        "action": "add",
+        "service": {
+            "serviceState": "Active",
+            "serviceCharacteristics": [{
+                    "name": "property",
+                    "valueType": "string",
+                    "value": "interfaces.port2.ipAddr"
+                },
+                {
+                    "name": "value",
+                    "valueType": "string",
+                    "value": "10.11.12.13"
+                }
+            ],
+            "serviceSpecification": {
+                "name": "Firewal Rule Change",
+                "href": "/bpocore/market/api/v1/products/5d4ab174-5aab-4cd3-b6b8-6df1a33a961b",
+                "id": "5d4ab174-5aab-4cd3-b6b8-6df1a33a961b"
+            }
+        }
+    }]
+}
